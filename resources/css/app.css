@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+  @keyframes smoke-slow {
+    0%   { transform: translate(0, 0) scale(1);    opacity: 0.4; }
+    50%  { transform: translate(8%, 12%) scale(1.1); opacity: 0.6; }
+    100% { transform: translate(0, 0) scale(1);    opacity: 0.4; }
+  }
+
+  @keyframes smoke-fast {
+    0%   { transform: translate(0, 0) scale(1);    opacity: 0.25; }
+    50%  { transform: translate(-12%, -8%) scale(1.15); opacity: 0.45; }
+    100% { transform: translate(0, 0) scale(1);    opacity: 0.25; }
+  }
+
+  .animate-smoke-slow {
+    animation: smoke-slow 45s linear infinite;
+  }
+
+  .animate-smoke-fast {
+    animation: smoke-fast 28s linear infinite;
+  }
+}
