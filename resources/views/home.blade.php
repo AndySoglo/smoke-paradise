@@ -33,7 +33,7 @@
     <!-- Fumée subtile animée -->
     <div class="absolute inset-0 pointer-events-none">
         <div class="w-full h-full">
-            <img src="{{ asset('images/smoke.png') }}" alt="fumée" class="absolute w-full h-full object-cover opacity-30 animate-float-slow">
+            <img src="{{ asset('images/téléchargement.jpg') }}" alt="fumée" class="absolute w-full h-full object-cover opacity-30 animate-float-slow">
         </div>
     </div>
 </section>
