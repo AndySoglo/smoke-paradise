@@ -6,6 +6,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="{{ asset('images/logo2.png') }}" rel="icon">
+<link href="{{ asset('images/logo2.png') }}" rel="apple-touch-icon">
 
 <style>
     /* Background clair avec nuages vape léger */
