@@ -4,103 +4,123 @@
 
 @section('content')
 
-    <!-- Hero / Titre de la page -->
-    <section class="relative pt-20 pb-16 md:pt-28 md:pb-24 text-center overflow-hidden">
-    <!-- Image de fond floue -->
+<!-- ================= HERO ================= -->
+<section class="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+
+    <!-- Background image + smoke vibe -->
     <div class="absolute inset-0">
         <img src="{{ asset('images/hero-background.jpg') }}"
-             alt="Fond Smoke Paradise"
-             class="w-full h-full object-cover filter blur-sm opacity-50">
-        <!-- Overlay sombre pour que le texte ressorte -->
-        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+             class="w-full h-full object-cover opacity-40 scale-105 blur-sm"
+             alt="Smoke Paradise">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black"></div>
     </div>
 
-    <div class="relative max-w-6xl mx-auto px-6">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+    <!-- Glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.25),transparent_60%)]"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-black tracking-wide text-orange-400 drop-shadow-lg mb-6">
             Tous nos produits
         </h1>
-        <p class="text-lg md:text-xl text-white max-w-3xl mx-auto mb-8 drop-shadow-md">
-            Découvrez notre sélection premium : e-liquides, arômes variés et produits de qualité supérieure.
+        <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">
+            Puffs, e-liquides et arômes premium.
+            Qualité, style et gros nuages 💨
         </p>
-
-        
     </div>
 </section>
 
+<!-- ================= PRODUCTS ================= -->
+<section class="relative py-20 bg-gradient-to-b from-black to-orange-950">
+    <div class="max-w-7xl mx-auto px-6">
 
-    <!-- Liste des produits -->
-    <section class="py-16 md:py-24 bg-white/60">
-        <div class="max-w-7xl mx-auto px-6">
+        <!-- Stats -->
+        <div class="text-center mb-16">
+            <p class="inline-block px-6 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-300 font-semibold">
+                {{ $products->count() }} produits disponibles
+            </p>
+        </div>
 
-            <!-- Stats / Info rapide (optionnel mais sympa) -->
-            <div class="text-center mb-12">
-                <p class="text-xl font-medium text-gray-700">
-                    {{ $products->count() }} produits disponibles
-                </p>
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+
+            @forelse($products as $product)
+
+            <div class="group relative bg-black/60 backdrop-blur-xl border border-orange-500/20 rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.8)] hover:shadow-[0_0_50px_rgba(249,115,22,0.35)] transition transform hover:-translate-y-3 flex flex-col">
+
+                <!-- Glow on hover -->
+                <div class="absolute inset-0 bg-gradient-to-t from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+
+                <!-- Image -->
+                <div class="relative overflow-hidden">
+                    @if($product->image)
+                        <img src="{{ asset('storage/' . $product->image) }}"
+                             alt="{{ $product->name }}"
+                             class="w-full h-56 object-cover transition duration-700 group-hover:scale-110">
+                    @else
+                        <div class="h-56 flex items-center justify-center bg-gradient-to-br from-orange-900 to-black text-orange-300 font-semibold">
+                            Pas d’image
+                        </div>
+                    @endif
+
+                    @if($product->created_at->diffInDays() <= 14)
+                        <span class="absolute top-4 left-4 bg-green-500 text-black text-xs font-black px-3 py-1 rounded-full shadow-lg">
+                            NOUVEAU
+                        </span>
+                    @endif
+                </div>
+
+                <!-- Content -->
+                <div class="relative p-6 flex-1 flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-100 mb-2 line-clamp-2">
+                        {{ $product->name }}
+                    </h3>
+
+                    <p class="text-orange-400 font-extrabold text-xl mb-4">
+                        {{ number_format($product->price, 0, '', ' ') }} FCFA
+                    </p>
+
+                    <!-- Flavors -->
+                    @if($product->flavors->isNotEmpty())
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            @foreach($product->flavors->take(4) as $flavor)
+                                <span class="text-xs px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-300">
+                                    {{ $flavor->name }}
+                                </span>
+                            @endforeach
+                            @if($product->flavors->count() > 4)
+                                <span class="text-xs text-gray-400">
+                                    +{{ $product->flavors->count() - 4 }}
+                                </span>
+                            @endif
+                        </div>
+                    @endif
+
+                    <!-- CTA -->
+                    <a href="{{ route('order.create', $product) }}"
+                       class="mt-auto group/btn relative overflow-hidden rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-black font-extrabold py-3 text-center transition transform hover:scale-105 shadow-lg">
+
+                        <span class="absolute inset-0 bg-white/20 opacity-0 group-hover/btn:opacity-100 transition"></span>
+                        <span class="relative flex items-center justify-center gap-2">
+                            <i data-feather="shopping-cart"></i>
+                            Commander
+                        </span>
+                    </a>
+                </div>
             </div>
 
-            <!-- Grille des produits -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10">
-                @forelse($products as $product)
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-3 hover:shadow-2xl transition duration-300 border border-orange-100/70 group flex flex-col">
-
-    <!-- Image -->
-    <div class="relative overflow-hidden">
-        @if($product->image)
-            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
-                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
-        @else
-            <div class="h-56 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center text-orange-300 text-xl font-medium">
-                Pas d'image
-            </div>
-        @endif
-
-        @if($product->created_at->diffInDays() <= 14)
-            <span class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                Nouveau
-            </span>
-        @endif
-    </div>
-
-    <!-- Contenu -->
-    <div class="p-6 flex-1 flex flex-col">
-        <h3 class="text-xl font-bold text-gray-800 mb-2 line-clamp-2">{{ $product->name }}</h3>
-        <p class="text-orange-600 font-semibold text-lg mb-3">{{ number_format($product->price, 0, '', ' ') }} FCFA</p>
-
-        <!-- Arômes -->
-        @if($product->flavors->isNotEmpty())
-            <div class="flex flex-wrap gap-2 mb-5">
-                @foreach($product->flavors->take(4) as $flavor)
-                    <span class="text-xs bg-orange-50 text-orange-700 px-3 py-1 rounded-full border border-orange-200">{{ $flavor->name }}</span>
-                @endforeach
-                @if($product->flavors->count() > 4)
-                    <span class="text-xs text-gray-500">+{{ $product->flavors->count() - 4 }}</span>
-                @endif
-            </div>
-        @endif
-
-        <!-- Bouton -->
-        <a href="{{ route('order.create', $product) }}"
-           class="mt-auto bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600
-                  text-white text-center py-3.5 rounded-xl font-semibold transition transform hover:scale-105 shadow-md">
-            <i data-feather="shopping-cart" class="inline mr-2"></i> Commander
-        </a>
-    </div>
-</div>
-
-                @empty
-                    <div class="col-span-full text-center py-20">
-                        <p class="text-2xl text-gray-600 font-medium">
-                            Aucun produit disponible pour le moment...
-                        </p>
-                        <p class="text-gray-500 mt-3">
-                            Revenez bientôt ou contactez-nous !
-                        </p>
-                    </div>
-                @endforelse
-            </div>
+            @empty
+                <div class="col-span-full text-center py-24">
+                    <p class="text-2xl font-semibold text-gray-300 mb-4">
+                        Aucun produit disponible
+                    </p>
+                    <p class="text-gray-500">
+                        Revenez bientôt ou contactez-nous 🔥
+                    </p>
+                </div>
+            @endforelse
 
         </div>
-    </section>
+    </div>
+</section>
 
 @endsection

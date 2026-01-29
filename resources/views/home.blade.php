@@ -5,37 +5,55 @@
 @section('content')
 
     <!-- Hero -->
-<section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-    <!-- Image de fond floue -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+
+    <!-- Background -->
     <div class="absolute inset-0">
         <img src="{{ asset('images/hero-background.jpg') }}"
-             alt="Smoke Paradise"
-             class="w-full h-full object-cover filter blur-sm brightness-75">
-        <!-- Overlay léger -->
-        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+             class="w-full h-full object-cover scale-110 opacity-40 blur-sm"
+             alt="Smoke Paradise">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
     </div>
 
-    <!-- Contenu du Hero -->
-    <div class="relative z-10 max-w-4xl px-6">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-5 leading-tight drop-shadow-lg">
-            Bienvenue chez <br>Smoke Paradise
-        </h1>
-        <p class="text-lg md:text-xl text-white mb-10 drop-shadow-md">
-            Découvrez nos produits et arômes uniques, pensés pour une expérience de vapotage premium.
-        </p>
-        <a href="{{ route('products.index') }}"
-           class="inline-block bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600
-                  text-white px-10 py-5 rounded-2xl font-bold text-lg transition transform hover:scale-105 shadow-xl">
-            Voir les produits
-        </a>
-    </div>
+    <!-- Glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.35),transparent_65%)]"></div>
 
-    <!-- Fumée subtile animée -->
-    <div class="absolute inset-0 pointer-events-none">
-        <div class="w-full h-full">
-            <img src="{{ asset('images/téléchargement.jpg') }}" alt="fumée" class="absolute w-full h-full object-cover opacity-30 animate-float-slow">
+    <!-- Smoke blobs -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+
+        <div class="inline-flex items-center gap-2 px-5 py-2 mb-6 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-300 font-semibold">
+            💨 Premium Vape Shop
         </div>
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
+            <span class="block text-white">Entrez dans</span>
+            <span class="block bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(249,115,22,0.8)]">
+                Smoke Paradise
+            </span>
+        </h1>
+
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-300 mb-10">
+            La référence du vapotage au Bénin.
+            Produits premium, arômes puissants et nuages sans limites.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <a href="{{ route('products.index') }}"
+               class="relative group overflow-hidden rounded-xl px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-black font-extrabold text-lg shadow-[0_0_40px_rgba(249,115,22,0.6)] transition hover:scale-105">
+                <span class="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition"></span>
+                <span class="relative">🔥 Découvrir les produits</span>
+            </a>
+
+           
+        </div>
+
     </div>
+
+    <div class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black to-transparent"></div>
 </section>
 
 <style>
