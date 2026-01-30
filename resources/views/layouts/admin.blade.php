@@ -73,9 +73,7 @@
                 <a href="{{ route('admin.flavors.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-orange-100 text-gray-900 font-semibold transition duration-300 hover:scale-105">
                     <i data-feather="tag" class="text-orange-500"></i> Arômes
                 </a>
-                <a href="{{ route('admin.orders.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-orange-100 text-gray-900 font-semibold transition duration-300 hover:scale-105">
-                    <i data-feather="shopping-cart" class="text-orange-500"></i> Commandes
-                </a>
+               
             </nav>
         </div>
 

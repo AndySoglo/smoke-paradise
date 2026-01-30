@@ -48,7 +48,7 @@
                 <span class="relative">🔥 Découvrir les produits</span>
             </a>
 
-           
+
         </div>
 
     </div>
@@ -148,5 +148,63 @@
             </div>
         </div>
     </section>
+    <!-- Section Pourquoi nous choisir - 3 petites cartes lumineuses -->
+<section class="py-20 bg-gradient-to-b from-gray-950 via-black to-gray-900 relative overflow-hidden">
+    <!-- Glows de fond légers -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-20 left-10 w-64 h-64 bg-orange-500/8 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-64 h-64 bg-orange-600/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-black text-center text-white mb-16 tracking-tight">
+            Pourquoi choisir
+            <span class="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(249,115,22,0.7)]">
+                Smoke Paradise
+            </span> ?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <!-- Carte 1 petite -->
+            <div class="bg-gray-900/75 backdrop-blur-lg rounded-2xl p-6 md:p-7 border border-orange-900/30 hover:border-orange-500/70 transition-all duration-400 hover:shadow-[0_0_25px_rgba(249,115,22,0.35)] group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-600/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-orange-900/50 group-hover:scale-105 transition">
+                    🌟
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 text-center">Produits Premium</h3>
+                <p class="text-gray-300 text-center text-base leading-relaxed">
+                    Marques authentiques, zéro contrefaçon, qualité testée pour des sessions parfaites.
+                </p>
+            </div>
+
+            <!-- Carte 2 petite -->
+            <div class="bg-gray-900/75 backdrop-blur-lg rounded-2xl p-6 md:p-7 border border-orange-900/30 hover:border-orange-500/70 transition-all duration-400 hover:shadow-[0_0_25px_rgba(249,115,22,0.35)] group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-600/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-orange-900/50 group-hover:scale-105 transition">
+                    🇧🇯
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 text-center">Référence Locale</h3>
+                <p class="text-gray-300 text-center text-base leading-relaxed">
+                    Basés à Abomey-Calavi – livraison rapide partout au Bénin + support humain en français.
+                </p>
+            </div>
+
+            <!-- Carte 3 petite -->
+            <div class="bg-gray-900/75 backdrop-blur-lg rounded-2xl p-6 md:p-7 border border-orange-900/30 hover:border-orange-500/70 transition-all duration-400 hover:shadow-[0_0_25px_rgba(249,115,22,0.35)] group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-orange-600/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-orange-900/50 group-hover:scale-105 transition">
+                    🔥
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 text-center">Saveurs & Prix</h3>
+                <p class="text-gray-300 text-center text-base leading-relaxed">
+                    +100 arômes puissants en stock + meilleurs prix du marché + promos régulières.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection

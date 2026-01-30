@@ -9,7 +9,6 @@ use App\Http\Controllers\ProfileController;
 |--------------------------------------------------------------------------
 */
 use App\Http\Controllers\FrontController;
-use App\Http\Controllers\Front\OrderController as FrontOrderController;
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
@@ -30,8 +29,7 @@ Route::get('/commande/{product}', [FrontController::class, 'create'])
     ->name('order.create');
 
 // Envoi de la commande
-Route::post('/commande/{product}', [FrontOrderController::class, 'store'])
-    ->name('order.store');
+
 // Page tous les produits
 Route::get('/produits', [FrontController::class, 'products'])
     ->name('products.index');

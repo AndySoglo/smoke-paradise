@@ -13,28 +13,10 @@
         </div>
     </div>
 
-<div class="bg-gradient-to-r from-purple-400 to-purple-300 text-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
-        <p class="text-sm font-medium opacity-80">Total Commandes</p>
-        <p class="text-3xl font-bold mt-2">{{ $ordersCount }}</p>
-        <div class="mt-2">
-            <i data-feather="shopping-cart" class="w-6 h-6"></i>
-        </div>
-    </div>
 
-    <div class="bg-gradient-to-r from-green-400 to-green-300 text-white p-6 rounded-2xl shadow-lg transform hover:scale-105 transition">
-        <p class="text-sm font-medium opacity-80">Chiffre d'affaires</p>
-        <p class="text-3xl font-bold mt-2">{{ number_format($revenue,0,'',' ') }} FCFA</p>
-        <div class="mt-2">
-            <i data-feather="dollar-sign" class="w-6 h-6"></i>
-        </div>
-    </div>
-</div>
 
 <!-- Graphique commandes -->
-<div class="bg-white p-6 rounded shadow">
-    <h2 class="text-xl font-bold mb-4">Commandes par jour (7 derniers jours)</h2>
-    <canvas id="ordersChart" class="w-full h-64"></canvas>
-</div>
+
 
 <script>
 const ctx = document.getElementById('ordersChart').getContext('2d');
