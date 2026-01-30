@@ -136,18 +136,7 @@
     </div>
 </section>
 
-    <!-- Section À propos -->
-    <section class="py-20 bg-gradient-to-b from-white to-orange-50">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800 mb-10">À propos de Smoke Paradise</h2>
-            <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10">
-                Smoke Paradise est né d'une passion pour le vapotage de qualité. Nous sélectionnons rigoureusement nos produits et arômes pour vous offrir une expérience unique, sûre et savoureuse. Que vous soyez débutant ou expert, notre objectif est de vous accompagner avec des produits premium et un service attentionné.
-            </p>
-            <div class="inline-block bg-orange-100 text-orange-700 px-8 py-4 rounded-xl text-lg font-medium">
-                Qualité • Saveurs authentiques • Service local
-            </div>
-        </div>
-    </section>
+
     <!-- Section Pourquoi nous choisir - 3 petites cartes lumineuses -->
 <section class="py-20 bg-gradient-to-b from-gray-950 via-black to-gray-900 relative overflow-hidden">
     <!-- Glows de fond légers -->
@@ -202,6 +191,32 @@
                 <p class="text-gray-300 text-center text-base leading-relaxed">
                     +100 arômes puissants en stock + meilleurs prix du marché + promos régulières.
                 </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Section finale - Communauté & Confiance (très compacte) -->
+<section class="py-12 bg-black border-t border-orange-900/20 relative">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Rejoins la <span class="text-orange-500">famille Smoke Paradise</span>
+        </h3>
+
+        <p class="text-gray-400 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+            Des milliers de vapoteurs béninois nous font déjà confiance.
+            Qualité garantie, livraison discrète et conseils perso quand tu en as besoin.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-300">
+            <div class="flex items-center gap-2">
+                <span class="text-orange-500 text-xl">★</span> +500 clients satisfaits
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-orange-500 text-xl">🚚</span> Livraison Rapide
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-orange-500 text-xl">🔒</span> Paiement 100% sécurisé
             </div>
         </div>
     </div>
